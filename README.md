@@ -1,7 +1,7 @@
 # 🔄 APK / AAB / APKS 批量转换工具
 
 [![GitHub](https://img.shields.io/badge/GitHub-planspieldaxe--commits-blue?logo=github)](https://github.com/planspieldaxe-commits)
-[![Releases](https://github.com/planspieldaxe-commits/apk-package-converter/releases)](https://github.com/planspieldaxe-commits/apk-aab-converter/releases)
+[![Releases](https://img.shields.io/github/v/release/planspieldaxe-commits/apk-package-converter?label=Download&logo=github)](https://github.com/planspieldaxe-commits/apk-package-converter/releases)
 [![Telegram](https://img.shields.io/badge/Telegram-@webasp-blue?logo=telegram)](https://t.me/webasp)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -34,7 +34,7 @@ Android应用包格式批量转换工具，支持 **APK**、**AAB**、**APKS** �
 
 ### 方式一：下载完整版（推荐）⭐
 
-直接从 [Releases](https://github.com/planspieldaxe-commits/apk-aab-converter/releases) 下载完整压缩包，**已包含所有依赖工具**：
+直接从 [Releases](https://github.com/planspieldaxe-commits/apk-package-converter/releases) 下载完整压缩包，**已包含所有依赖工具**：
 
 | 文件 | 说明 |
 |------|------|
@@ -46,8 +46,8 @@ Android应用包格式批量转换工具，支持 **APK**、**AAB**、**APKS** �
 
 #### 1. 下载项目
 ```bash
-git clone https://github.com/planspieldaxe-commits/apk-aab-converter.git
-cd apk-aab-converter
+git clone https://github.com/planspieldaxe-commits/apk-package-converter.git
+cd apk-package-converter
 ```
 
 #### 2. 安装依赖工具
@@ -103,7 +103,7 @@ python converter.py 9
 ## 📁 目录结构
 
 ```
-apk-aab-converter/
+apk-package-converter/
 ├── apk/              # 放入待转换的APK文件
 ├── aab/              # AAB输出目录
 ├── apks/             # APKS输出目录
