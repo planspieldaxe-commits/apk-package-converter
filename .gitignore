@@ -1,22 +1,157 @@
-### AL ###
-#Template for AL projects for Dynamics 365 Business Central
-#launch.json folder
+# ================================================================================
+# APK/AAB/APKS Converter - .gitignore
+# GitHub: https://github.com/planspieldaxe-commits
+# ================================================================================
+
+# ==================== Python ====================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# ==================== 转换文件目录 ====================
+# 输入目录（保留目录结构，忽略内容）
+apk/*.apk
+apk/**/*.apk
+
+# 输出目录
+aab/*.aab
+aab/**/*.aab
+apks/*.apks
+apks/**/*.apks
+apk2/*.apk
+apk2/**/*.apk
+
+# 拆分包输入目录
+split_apk/*.apks
+split_apk/*.xapk
+split_apk/*.apkm
+split_apk/**/*
+
+# ==================== 签名文件（敏感信息）====================
+keystore/*.jks
+keystore/*.keystore
+keystore/*.json
+keystore/**/*
+
+# ==================== 工具目录（太大，用户自行下载）====================
+tools/bundletool.jar
+tools/jdk-*/
+tools/jdk*/
+tools/android-sdk/
+tools/aapt2
+tools/aapt2.exe
+
+# ==================== IDE / 编辑器 ====================
+# VS Code
 .vscode/
-#Cache folder
-.alcache/
-#Symbols folder
-.alpackages/
-#Snapshots folder
-.snapshots/
-#Testing Output folder
-.output/
-#Extension App-file
-*.app
-#Rapid Application Development File
-rad.json
-#Translation Base-file
-*.g.xlf
-#License-file
-*.flf
-#Test results file
-TestResults.xml
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ==================== 操作系统 ====================
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+*~
+
+# ==================== 日志和临时文件 ====================
+*.log
+*.tmp
+*.temp
+*.bak
+logs/
+temp/
+tmp/
+
+# ==================== 保留的空目录占位文件 ====================
+!apk/.gitkeep
+!aab/.gitkeep
+!apks/.gitkeep
+!apk2/.gitkeep
+!split_apk/.gitkeep
+!keystore/.gitkeep
+!tools/.gitkeep
+

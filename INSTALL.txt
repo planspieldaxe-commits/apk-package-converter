@@ -1,0 +1,281 @@
+================================================================================
+                    APK / AAB / APKS 批量转换工具
+                         依赖与工具安装说明
+
+================================================================================
+                              系统要求
+================================================================================
+
+操作系统: Windows 10/11 (64位)
+内存: 建议 4GB 以上
+磁盘空间: 约 500MB (工具) + 转换文件空间
+
+
+================================================================================
+                            必需依赖列表
+================================================================================
+
+┌──────────────────┬─────────────┬──────────────────────────────────────────┐
+│ 依赖名称         │ 版本要求    │ 用途                                     │
+├──────────────────┼─────────────┼──────────────────────────────────────────┤
+│ Python           │ 3.8+        │ 运行主程序                               │
+│ JDK              │ 17+ (推荐21)│ 运行bundletool和签名工具                 │
+│ bundletool.jar   │ 最新版      │ AAB/APKS转换核心工具                     │
+│ Android SDK      │ Build Tools │ aapt2, zipalign, apksigner等工具        │
+│ Build Tools      │ 33.0.0+     │                                          │
+└──────────────────┴─────────────┴──────────────────────────────────────────┘
+
+================================================================================
+                            可选依赖列表
+================================================================================
+
+┌──────────────────┬─────────────┬──────────────────────────────────────────┐
+│ 依赖名称         │ 版本要求    │ 用途                                     │
+├──────────────────┼─────────────┼──────────────────────────────────────────┤
+│ customtkinter    │ 最新版      │ GUI图形界面美化（可选）                  │
+└──────────────────┴─────────────┴──────────────────────────────────────────┘
+
+安装方法: pip install customtkinter
+
+
+================================================================================
+                           1. 安装 Python
+================================================================================
+
+【下载地址】
+官网: https://www.python.org/downloads/
+推荐版本: Python 3.11 或 3.12
+
+【安装步骤】
+1. 下载 Windows installer (64-bit)
+2. 运行安装程序
+3. ⚠️ 重要：勾选 "Add Python to PATH"
+4. 点击 "Install Now"
+
+【验证安装】
+打开命令提示符或PowerShell，运行：
+    python --version
+    
+应显示类似: Python 3.11.x
+
+
+================================================================================
+                            2. 安装 JDK
+================================================================================
+
+【推荐版本】
+Eclipse Temurin JDK 21 (免费开源)
+
+【下载地址】
+官网: https://adoptium.net/
+直链: https://adoptium.net/temurin/releases/?version=21
+
+或者使用其他JDK发行版：
+- Oracle JDK: https://www.oracle.com/java/technologies/downloads/
+- Amazon Corretto: https://aws.amazon.com/corretto/
+- Microsoft OpenJDK: https://www.microsoft.com/openjdk
+
+【安装步骤 - 方式1: 使用安装程序】
+1. 下载 .msi 安装程序
+2. 运行安装
+3. 设置 JAVA_HOME 环境变量（安装程序通常自动设置）
+
+【安装步骤 - 方式2: 便携版（推荐）】
+1. 下载 .zip 压缩包
+2. 解压到 tools\ 目录，重命名为 jdk-21.0.9+10
+3. 目录结构应为:
+   tools\
+   └── jdk-21.0.9+10\
+       ├── bin\
+       │   ├── java.exe
+       │   ├── keytool.exe
+       │   └── jarsigner.exe
+       ├── conf\
+       ├── lib\
+       └── ...
+
+【验证安装】
+    tools\jdk-21.0.9+10\bin\java.exe -version
+
+应显示类似: openjdk version "21.0.x"
+
+
+================================================================================
+                         3. 安装 bundletool
+================================================================================
+
+【下载地址】
+GitHub: https://github.com/google/bundletool/releases
+
+【安装步骤】
+1. 下载最新版 bundletool-all-x.x.x.jar
+2. 重命名为 bundletool.jar
+3. 放入 tools\ 目录
+
+目录结构:
+    tools\
+    └── bundletool.jar
+
+【验证安装】
+    tools\jdk-21.0.9+10\bin\java.exe -jar tools\bundletool.jar version
+
+应显示版本号，如: 1.15.6
+
+
+================================================================================
+                      4. 安装 Android SDK Build Tools
+================================================================================
+
+【方式1: 使用 Android Studio（推荐新手）】
+1. 下载 Android Studio: https://developer.android.com/studio
+2. 安装后打开 SDK Manager
+3. 选择 SDK Tools -> Android SDK Build-Tools
+4. 安装版本 33.0.0 或更高
+
+【方式2: 仅下载命令行工具】
+1. 下载 Command line tools only:
+   https://developer.android.com/studio#command-tools
+   
+2. 解压到 tools\android-sdk\cmdline-tools\
+
+3. 运行 sdkmanager 安装 build-tools:
+   tools\jdk-21.0.9+10\bin\java.exe -jar ^
+       tools\android-sdk\cmdline-tools\lib\sdkmanager.jar ^
+       "build-tools;35.0.0"
+
+【方式3: 手动下载（高级用户）】
+从 Google 的 Maven 仓库下载:
+https://dl.google.com/android/repository/build-tools_r35-windows.zip
+
+解压后放入:
+    tools\
+    └── android-sdk\
+        └── build-tools\
+            └── 35.0.0\
+                ├── aapt2.exe
+                ├── zipalign.exe
+                ├── apksigner.bat
+                ├── d8.bat
+                └── ...
+
+【验证安装】
+    tools\android-sdk\build-tools\35.0.0\aapt2.exe version
+
+应显示版本信息
+
+
+================================================================================
+                           完整目录结构
+================================================================================
+
+安装完成后，tools 目录结构应如下:
+
+tools\
+├── bundletool.jar                    # bundletool工具
+├── jdk-21.0.9+10\                    # JDK目录
+│   ├── bin\
+│   │   ├── java.exe
+│   │   ├── keytool.exe
+│   │   └── jarsigner.exe
+│   ├── conf\
+│   ├── lib\
+│   └── ...
+└── android-sdk\
+    ├── build-tools\
+    │   └── 35.0.0\                   # 或其他版本
+    │       ├── aapt2.exe
+    │       ├── zipalign.exe
+    │       ├── apksigner.bat
+    │       └── ...
+    └── cmdline-tools\                # 可选
+        └── ...
+
+
+================================================================================
+                            快速下载链接
+================================================================================
+
+【Python 3.12】
+https://www.python.org/ftp/python/3.12.0/python-3.12.0-amd64.exe
+
+【Eclipse Temurin JDK 21 (Windows x64 zip)】
+https://github.com/adoptium/temurin21-binaries/releases
+
+【bundletool 最新版】
+https://github.com/google/bundletool/releases/latest
+
+【Android SDK Build Tools】
+https://dl.google.com/android/repository/build-tools_r35-windows.zip
+
+【Android SDK Command Line Tools】
+https://dl.google.com/android/repository/commandlinetools-win-11076708_latest.zip
+
+
+================================================================================
+                           验证安装脚本
+================================================================================
+
+运行以下命令验证所有工具是否正确安装:
+
+PowerShell:
+-----------
+$env:PYTHONIOENCODING='utf-8'
+python converter.py
+
+如果显示 "[OK] 所有工具检测通过"，则安装成功。
+
+如果显示缺少工具，请根据提示安装对应的依赖。
+
+
+================================================================================
+                             常见问题
+================================================================================
+
+Q: 提示 "python 不是内部或外部命令"
+A: Python未添加到PATH。重新安装Python并勾选"Add Python to PATH"，
+   或手动将Python安装目录添加到系统环境变量PATH中。
+
+Q: 提示 "java.exe 找不到"
+A: JDK未正确安装。确保JDK解压到 tools\jdk-21.0.9+10\ 目录，
+   或检查目录名称是否匹配。
+
+Q: 提示 "bundletool.jar 找不到"
+A: 确保bundletool.jar放在tools目录下，文件名必须是 bundletool.jar
+
+Q: 提示 "aapt2.exe 找不到"
+A: Android SDK Build Tools未正确安装。
+   确保目录结构为 tools\android-sdk\build-tools\35.0.0\aapt2.exe
+
+Q: JDK版本不对怎么办？
+A: 可以修改 converter.py 中的 Config 类，更改 java_home 路径:
+   self.java_home = self.tools_dir / "jdk-你的版本"
+
+Q: Build Tools版本不是35.0.0怎么办？
+A: 修改 converter.py 中的路径:
+   self.aapt2 = self.tools_dir / "android-sdk" / "build-tools" / "你的版本" / "aapt2.exe"
+
+
+================================================================================
+                             一键安装脚本
+================================================================================
+
+如果您熟悉命令行，可以使用以下PowerShell脚本自动下载依赖:
+
+# 创建目录
+New-Item -ItemType Directory -Force -Path "tools"
+
+# 下载 bundletool
+Invoke-WebRequest -Uri "https://github.com/google/bundletool/releases/download/1.15.6/bundletool-all-1.15.6.jar" -OutFile "tools\bundletool.jar"
+
+# 下载 JDK (需手动解压)
+Invoke-WebRequest -Uri "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.2%2B13/OpenJDK21U-jdk_x64_windows_hotspot_21.0.2_13.zip" -OutFile "tools\jdk.zip"
+
+# 下载 Build Tools (需手动解压)
+Invoke-WebRequest -Uri "https://dl.google.com/android/repository/build-tools_r35-windows.zip" -OutFile "tools\build-tools.zip"
+
+echo "下载完成，请手动解压 jdk.zip 和 build-tools.zip 到对应目录"
+
+
+================================================================================
+
+
