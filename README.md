@@ -28,11 +28,7 @@ Android应用包格式批量转换工具，支持 **APK**、**AAB**、**APKS** �
 
 | 全流程转换 | 拆分包 → APK |
 |:----------:|:------------:|
-| ![全流程转换](screenshots/3.png) | ![拆分包转APK](screenshots/4.png) |
-
-| 完整界面 |
-|:--------:|
-| ![完整界面](screenshots/5.png) |
+| ![全流程转换](screenshots/3.png) | ![拆分包转APK](screenshots/5.png) |
 
 ## 🚀 快速开始
 
