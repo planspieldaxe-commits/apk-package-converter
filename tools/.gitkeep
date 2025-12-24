@@ -1,0 +1,6 @@
+# 工具目录 - 请参考 INSTALL.txt 下载所需工具
+# 需要以下工具：
+# - bundletool.jar
+# - jdk-21.0.9+10/ (或其他JDK 17+版本)
+# - android-sdk/build-tools/35.0.0/ (包含aapt2, zipalign, apksigner)
+
