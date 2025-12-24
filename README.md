@@ -1,6 +1,7 @@
 # 🔄 APK / AAB / APKS 批量转换工具
 
 [![GitHub](https://img.shields.io/badge/GitHub-planspieldaxe--commits-blue?logo=github)](https://github.com/planspieldaxe-commits)
+[![Releases](https://img.shields.io/github/v/release/planspieldaxe-commits/apk-aab-converter?label=Download&logo=github)](https://github.com/planspieldaxe-commits/apk-aab-converter/releases)
 [![Telegram](https://img.shields.io/badge/Telegram-@webasp-blue?logo=telegram)](https://t.me/webasp)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
@@ -27,28 +28,44 @@ Android应用包格式批量转换工具，支持 **APK**、**AAB**、**APKS** �
 
 | 全流程转换 | 拆分包 → APK |
 |:----------:|:------------:|
-| ![完整界面](screenshots/5.png) | ![全流程转换](screenshots/3.png) |
+| ![全流程转换](screenshots/3.png) | ![拆分包转APK](screenshots/4.png) |
+
+| 完整界面 |
+|:--------:|
+| ![完整界面](screenshots/5.png) |
 
 ## 🚀 快速开始
 
-### 1. 下载项目
+### 方式一：下载完整版（推荐）⭐
+
+直接从 [Releases](https://github.com/planspieldaxe-commits/apk-aab-converter/releases) 下载完整压缩包，**已包含所有依赖工具**：
+
+| 文件 | 说明 |
+|------|------|
+| `APK-Converter-v1.2.0-Full.zip` | ✅ 包含 JDK + bundletool + Android SDK |
+
+下载后解压即可使用，无需额外安装任何工具！
+
+### 方式二：从源码安装
+
+#### 1. 下载项目
 ```bash
 git clone https://github.com/planspieldaxe-commits/apk-aab-converter.git
 cd apk-aab-converter
 ```
 
-### 2. 安装依赖工具
+#### 2. 安装依赖工具
 参考 [INSTALL.txt](INSTALL.txt) 下载以下工具到 `tools/` 目录：
 - **bundletool.jar** - [下载](https://github.com/google/bundletool/releases)
 - **JDK 17+** - [下载](https://adoptium.net/)
 - **Android Build Tools** - [下载](https://developer.android.com/studio)
 
-### 3. 安装 Python 依赖（可选，用于美化界面）
+#### 3. 安装 Python 依赖（可选，用于美化界面）
 ```bash
 pip install customtkinter
 ```
 
-### 4. 启动程序
+### 启动程序
 
 **图形界面（推荐）：**
 ```bash
@@ -126,12 +143,24 @@ apk-aab-converter/
 ## ❓ 常见问题
 
 <details>
+<summary><b>Q: 下载哪个版本？</b></summary>
+
+| 版本 | 适用人群 | 说明 |
+|------|----------|------|
+| **完整版 (Full)** | 新手推荐 ✅ | 包含JDK+bundletool+SDK，解压即用 |
+| **源码版 (Source)** | 开发者 | 需要自行安装依赖工具 |
+
+推荐下载 **完整版**，无需任何配置！
+</details>
+
+<details>
 <summary><b>Q: 转换失败怎么办？</b></summary>
 
 检查以下几点：
 1. tools目录下是否有完整的工具文件
 2. JDK版本是否为17+
 3. 输入文件是否完整无损
+4. 确保Python 3.8+已安装
 </details>
 
 <details>
@@ -147,6 +176,15 @@ apk-aab-converter/
 ```bash
 pip install customtkinter
 ```
+</details>
+
+<details>
+<summary><b>Q: 系统要求是什么？</b></summary>
+
+- **操作系统**: Windows 10/11 (64位)
+- **Python**: 3.8 或更高版本
+- **内存**: 4GB+ 推荐
+- **磁盘**: 500MB+ 可用空间（完整版约300MB）
 </details>
 
 ## 📞 联系方式
