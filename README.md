@@ -1,7 +1,7 @@
 # 🔄 APK / AAB / APKS 批量转换工具
 
 [![GitHub](https://img.shields.io/badge/GitHub-planspieldaxe--commits-blue?logo=github)](https://github.com/planspieldaxe-commits)
-[![Releases](https://img.shields.io/github/v/release/planspieldaxe-commits/apk-aab-converter?label=Download&logo=github)](https://github.com/planspieldaxe-commits/apk-aab-converter/releases)
+[![Releases](https://github.com/planspieldaxe-commits/apk-package-converter/releases)](https://github.com/planspieldaxe-commits/apk-aab-converter/releases)
 [![Telegram](https://img.shields.io/badge/Telegram-@webasp-blue?logo=telegram)](https://t.me/webasp)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
